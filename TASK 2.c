@@ -1,35 +1,48 @@
-﻿#include<stdio.h>
-int main()
+#include <stdio.h>
+int binary_(int x);
+
+
+/*int main()
 {
-	/*(Body Mass Index Calculator) Create a BMI calculator application that reads the user’s weight in pounds
-	and height in inches (or, if you prefer, the user’s weight in kilograms and height in meters),
-	then calculates and displays the user’s body mass index. Also, the application should display the following
-	information from the Department of Health and Human Services/National Institutes of Health so the user can 
-	evaluate his/her BMI:
-𝐵𝑚𝑖 =  𝑤𝑒𝑖𝑔ℎ𝑡/(ℎ𝑒𝑖𝑔ℎ𝑡^2 )*/
-	float w, h,BMI=0;
-	printf("Enter the weight in kilograms : ");
-	scanf_s("%f", &w);
-	printf("Enter the hight in meters : ");
-	scanf_s("%f", &h);
-	BMI = w / (h * h);
-	if (BMI < 18.5)
-	{
-		printf("underweight");
 
-	}
-	else if (BMI >= 18.5 && BMI <= 24.9)
+	printf("DECIMAL\tOCTAL\tHEXADECIMAL\tBINARY\n");
+	for (size_t i = 1; i <= 256; i++)
 	{
-		printf("normal");
-
+		printf("%d    \t%o    \t%x         \t%d      \n", i, i, i, binary_(i));
 	}
-	else if (BMI >= 25 && BMI <= 29.9)
-	{
-		printf("overweight");
-	}
-	else if (BMI >= 30)
-		printf("obese");
-
+	puts("");
 
 	return 0;
+}*/
+//another sol
+int main()
+{
+	int x;
+	printf("enter the num in decimal\n");
+	scanf_s("%d", &x);
+	printf("the num in oct is %o\n",x);
+	printf("the num in hexa is %x\n", x);
+	printf("the num in binary is %d\n", binary_(x));
+
+	return 0;
+
+
+}
+
+
+int binary_(int x)
+{
+	int arr[100] = { 0 }, i = 0;
+	while (x > 0)
+	{
+		arr[i] = x % 2;
+		x /= 2;
+		i++;
+	}
+	for (int g = i - 1; g >= 0; g--)
+	{
+		printf("%d", arr[g]);
+	}
+	puts("");
+	return binary_(x);
 }
