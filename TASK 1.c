@@ -1,33 +1,52 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
-int main() {
-    /*(Calculating Credit Limits) Collecting money becomes increasingly difficult during periods of recession,
-    so companies may tighten their credit limits to prevent their accounts receivable (money owed to them) 
-    from becoming too large. In response to a prolonged recession, one company has cut its
-    customers’ credit limits in half. Thus, if a particular customer had a credit limit of $2000 it’s now $1000. 
-    If a customer had a credit limit of $5000, it’s now $2500. Write a program that analyses the credit status of three 
-    customers of this company. For each customer you’re given:	a) The customer’s account number.	b)
-    The customer’s credit limit before the recession.	c) The customer’s current balance
-    (i.e., the amount the customer owes the company). Your program should calculate and print the new credit limit 
-    for each customer and should determine (and print) which customers have current balances that exceed their new credit limits.
+int main()
+{
+    /*Write a program that reads student scores, gets the best score, and then assigns grades based on
+    the following scheme:
+    Grade is A if score is >= best - 10;
+     Grade is B if score is >= best - 20;
+      Grade is C if score is >= best - 30;
+       Grade is D if score is >= best - 40;
+       Grade is F otherwise.The program prompts the user to enter the total number of students,
+       then prompts the user to enter all the scores and concludes by displaying the grades.
 */
-    int accnum = 0;
-    float  creditlim=0, currentbalance=0;
-    for (size_t i = 1; i <=3 ; i++)
-    {
-        printf("Enter the Accnum: ");
-        scanf_s("%d", &accnum);
-        printf("Enter the creditlim : ");
-        scanf_s("%d", &creditlim);
-        printf("Enter the Current balance: ");
-        scanf_s("%d", &currentbalance);
-        printf("The new credit limit is : %d$\n", creditlim / 2);
-        if (currentbalance>creditlim/2)
-        {
-            printf("\nThe customer whose number is %d has exceed the new credit limit\n", accnum);
-     }
-        printf("\n");
+    int n,  best;
+    char m;
+    printf("enter the number of students");
+    scanf_s("%d", &n);
+
+    int score[n];
+    printf(" enter %d scores ");
+
+
+    for (int i = 0; i < n; i++) {
+        scanf_s("%d", &score[i]);
+
     }
-  
-       
+
+    best = score[0];
+    for (int i = 1; i < n; i++) {
+        if (score[i] > best)
+            best = score[i];
+    }
+    for (int i = 0; i < x; i++) {
+        if (score[i] >= best - 10)
+            m = 'A';
+        else if (score[i] >= best - 20)
+            m = 'B';
+        else if (score[i] >= best - 30)
+       m = 'C';
+
+        else if (score[i] >= best - 40)
+            m = 'D';
+        else
+            m = 'F';
+
+        printf("student\t %d\t score is %d and grand is %c\n", i, score[i], m);
+    }
+
+
+
+}
